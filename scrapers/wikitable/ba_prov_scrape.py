@@ -5,14 +5,18 @@ url = 'https://es.wikipedia.org/wiki/Elecciones_provinciales_de_Buenos_Aires_de_
 # Specify header row index
 header_row = 0
 
-tables = pd.read_html(url, header=header_row)
+# Set decimal and thousands separators
+decimal = ','
+thousands = '.'
+
+tables = pd.read_html(url, header=header_row, decimal=decimal, thousands=thousands)
 
 # Ninth table on the page
 df = tables[8]
 
 # Rename columns
 df.columns = ['Date', 'Pollster', 'Sample', 'Frente de Todos', 'Juntos por el Cambio',
-             'Avanca Libertad', 'La Libertad Avanca', 'Frente de Izquierda', 'Others',
+             'Avanca Libertad', 'La Libertad Avanza', 'Frente de Izquierda', 'Others',
              'Blank', 'Undecided', 'Lead']
 
 # Filter out rows where Date is NaN
