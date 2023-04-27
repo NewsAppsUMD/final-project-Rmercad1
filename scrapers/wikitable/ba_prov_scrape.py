@@ -1,26 +1,26 @@
-import csv
-import requests
-from bs4 import BeautifulSoup
+import pandas as pd
 
-url = "https://es.wikipedia.org/wiki/Elecciones_provinciales_de_Buenos_Aires_de_2023"
-res = requests.get(url)
-soup = BeautifulSoup(res.content, "html.parser")
+url = 'https://es.wikipedia.org/wiki/Elecciones_provinciales_de_Buenos_Aires_de_2023'
 
-table = soup.find("span", {"id": "Encuestas_de_opinión"}).find_next("table")
+# Specify header row index
+header_row = 0
 
-with open("ba_prov_poll_results.csv", "w", newline="", encoding="utf-8") as file:
-    writer = csv.writer(file)
+tables = pd.read_html(url, header=header_row)
 
-    for row in table.find_all("tr")[1:]:
-        columns = row.find_all("td")
+# Ninth table on the page
+df = tables[8]
 
-        # Check if the row has the expected number of columns
-        if len(columns) == 6:
-            date = columns[0].get_text().strip()
-            polling_firm = columns[1].get_text().strip()
-            sample_size = columns[2].get_text().strip().replace(".", "")
-            margin_of_error = columns[3].get_text().strip().replace("%", "")
-            undecided = columns[4].get_text().strip().replace("%", "")
-            peronist_front = columns[5].get_text().strip().replace("%", "")
+# Rename columns
+df.columns = ['Date', 'Pollster', 'Sample', 'Frente de Todos', 'Juntos por el Cambio',
+             'Avanca Libertad', 'La Libertad Avanca', 'Frente de Izquierda', 'Others',
+             'Blank', 'Undecided', 'Lead']
 
-            writer.writerow([date, polling_firm, sample_size, margin_of_error, undecided, peronist_front])
+# Filter out rows where Date is NaN
+df = df[df['Date'].notna()]
+
+# Drop duplicate header row by index
+dup_idx = df[df['Date'].str.startswith('Fecha')].index
+df = df.drop(dup_idx)
+
+# Save to CSV
+df.to_csv('ba_prov_polls.csv', index=False)
