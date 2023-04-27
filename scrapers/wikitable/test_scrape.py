@@ -11,7 +11,7 @@ table = soup.find_all('table')[0]
 rows = table.find_all('tr')
 
 # modify table headers to display in English
-headers = ['Polling firm', 'Date', 'Sample size', 'Frente de Todos', 'Juntos por el Cambio', 'La Libertad Avanca', 'Consenso Federal', 'Frente de Izquierda', 'Others', 'Blank', 'Undecided', 'Lead']
+headers = ['Date', 'Polling firm', 'Sample size', 'Frente de Todos', 'Juntos por el Cambio', 'La Libertad Avanca', 'Consenso Federal', 'Frente de Izquierda', 'Others', 'Blank', 'Undecided', 'Lead']
 
 # write table headers to CSV file
 with open('spanish_voting_intentions.csv', mode='w', newline='') as file:
@@ -55,3 +55,4 @@ with open('spanish_voting_intentions.csv', mode='a', newline='') as file:
 
         # update previous row cells
         prev_row_cells = len(data)
+
