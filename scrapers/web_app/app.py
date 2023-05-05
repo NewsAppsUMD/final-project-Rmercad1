@@ -6,7 +6,8 @@ app = Flask(__name__)
 # Route for the home page
 @app.route('/')
 def home():
-    return render_template('home.html')
+    df = pd.read_csv('../wikitable/spanish_voting_intentions.csv')
+    return render_template('home.html', data=df.to_html())
 
 # Route for displaying the Spanish voting intentions table
 @app.route('/spanish_voting_intentions')

@@ -16,7 +16,10 @@
       .card {
         background-color: rgb(80, 78, 78);
         color: white;
+
   }
+  .dataframe
+{ }
 </style>
     </style>
   </head>
@@ -49,39 +52,33 @@
           <h1>Welcome to Argentina 329!</h1>
           <img src="{{ url_for('static', filename='images/Flag_of_Argentina.png') }}" alt="Argentina Flag" width="250" height="157">
           <p>Argentina 329 is an electoral projections website based on the available polls for the upcoming 2023 Argentine presidential election and the provincial / autonomous city elections taking place throughout the year. The inspiration for this website is based on Philippe J. Fournier’s Canada338 and Nate Silver’s 538. 
-            Ryan Mercado is a journalism master’s student at the Philip Merrill College of Journalism at the University of Maryland. This website was created with help from Merrill faculty member, Derek Willis. 
-            
+            Ryan Mercado is a journalism master’s student at the Philip Merrill College of Journalism at the University of Maryland. This website was created with help from Merrill faculty member, Derek Willis, and software Engineer Albert Najjar. 
+            <br>
             ¡Disfruta del sitio web!
           </p>
         </div>
+        <div class="text-center">
+          <div class="inline-flex shadow-sm" role="group">
+            <button type="button" class="border border-gray-200 bg-white py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-gold-3 focus:z-10 focus:text-gold-3 focus:ring-2 focus:ring-blue-700 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-blue-500">
+              <a href="#latestpollbutton">Latest polls by political party</a>
+            </button>
+            <button type="button" class="border-t border-b border-gray-200 bg-white py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-gold-3 focus:z-10 focus:text-gold-3 focus:ring-2 focus:ring-blue-700 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-blue-500">
+              <a href="#election-map">Election Map</a>
+            </button>
+            <button type="button" class="border border-gray-200 bg-white py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-gold-3 focus:z-10 focus:text-gold-3 focus:ring-2 focus:ring-blue-700 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-blue-500">
+              <a href="#provincial-elections">Provincial Elections</a>
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="card custom-card">
-            <div class="card-body">
-              <h5 class="card-title">Latest Polling Numbers</h5>
-              <p class="card-text">This section will display the latest polling numbers.</p>
-              <a href="#" class="btn btn-primary">View Polls</a>
-            </div>
-          </div>
+    <div>
+      <br>
+      <div class="text-center"
+        <br>
+        <h2 id="latestpollbutton"> Latest polls by political party </h2>
         </div>
-        
-        <div class="col-sm-6">
-          <div class="card custom-card">
-            <div class="card-body">
-              <h5 class="card-title">Election Map</h5>
-              <p class="card-text">This section will display an interactive map of the election results.</p>
-              <a href="#" class="btn btn-primary">View Map</a>
-            </div>
-          </div>
-        </div>
+        <br>
+        {{data|safe}}
 
-        <div class="col-sm-6">
-          <div class="card custom-card">
-            <div class="card-body">
-              <h5 class="card-title">Provincial elections forecasts</h5>
-              <p class="card-text">This section will display polls and forecasts for the provincial elections.</p>
-              <a href="#" class="btn btn-primary">View Page</a>
-            </div>
-          </div>
-        </div>
+
+ </html>
