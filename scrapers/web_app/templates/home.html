@@ -9,8 +9,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
       body {
-        background-color: #75AADB;
-        color: white;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
       }
       
       .card {
@@ -47,7 +47,7 @@
       <div class="row justify-content-center">
         <div class="col-sm-12 text-center">
           <h1>Welcome to Argentina 329!</h1>
-          <img src="images/Flag_of_Argentina.png" alt="Argentina Flag" width="250" height="157">
+          <img src="{{ url_for('static', filename='images/Flag_of_Argentina.png') }}" alt="Argentina Flag" width="250" height="157">
           <p>Argentina 329 is an electoral projections website based on the available polls for the upcoming 2023 Argentine presidential election and the provincial / autonomous city elections taking place throughout the year. The inspiration for this website is based on Philippe J. Fournier’s Canada338 and Nate Silver’s 538. 
             Ryan Mercado is a journalism master’s student at the Philip Merrill College of Journalism at the University of Maryland. This website was created with help from Merrill faculty member, Derek Willis. 
             
