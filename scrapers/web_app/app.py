@@ -15,5 +15,10 @@ def display_spanish_voting_intentions():
     df = pd.read_csv('scrapers/wikitable/spanish_voting_intentions.csv')
     return render_template('table.html', data=df.to_html())
 
+# Route for the provincial elections page
+@app.route('/provinces')
+def provinces():
+    return render_template('provinces.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
