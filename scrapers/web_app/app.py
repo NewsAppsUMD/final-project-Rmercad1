@@ -20,5 +20,10 @@ def display_spanish_voting_intentions():
 def provinces():
     return render_template('provinces.html')
 
+# Route for the corrientes province page
+@app.route('/provinces/corrientes')
+def display_corrientes():
+    return render_template('corrientes.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
