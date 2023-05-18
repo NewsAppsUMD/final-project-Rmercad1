@@ -35,6 +35,7 @@ def display_tucuman():
 def display_cordoba():
     return render_template('cordoba.html')
 
+
 @app.route('/provinces/formosa')
 def display_formosa():
     return render_template('formosa.html')
