@@ -25,10 +25,6 @@ def provinces():
 def display_corrientes():
     return render_template('corrientes.html')
 
-# Route for the San Juan province page
-@app.route('/provinces/sanjuan')
-def display_sanjuan():
-    return render_template('sanjuan.html')
 
 # Route for the Tucuman province page
 @app.route('/provinces/tucuman')
