@@ -72,6 +72,10 @@ def display_entrerios():
 def display_buenosaires():
     return render_template('buenosaires.html')
 
+@app.route('/provinces/sanluis')
+def display_sanluis():
+    return render_template('sanluis.html')
+
 @app.route('/provinces/neuquen')
 def display_neuquen():
     return render_template('neuquen.html')
