@@ -80,41 +80,8 @@ def display_buenosaires():
 def display_sanluis():
     return render_template('sanluis.html')
 
-@app.route('/provinces/neuquen')
-def display_neuquen():
-    return render_template('neuquen.html')
 
-@app.route('/provinces/rionegro')
-def display_rionegro():
-    return render_template('rionegro.html')
 
-@app.route('/provinces/jujuy')
-def display_jujuy():
-    return render_template('jujuy.html')
-
-@app.route('/provinces/larioja')
-def display_larioja():
-    return render_template('larioja.html')
-
-@app.route('/provinces/misiones')
-def display_misiones():
-    return render_template('misiones.html')
-
-@app.route('/provinces/lapampa')
-def display_lapampa():
-    return render_template('lapampa.html')
-
-@app.route('/provinces/salta')
-def display_salta():
-    return render_template('salta.html')
-
-@app.route('/provinces/sanjuan')
-def display_sanjuan():
-    return render_template('sanjuan.html')
-
-@app.route('/provinces/tierradelfuego')
-def display_tierradelfuego():
-    return render_template('tierradelfuego.html')
 
 
 

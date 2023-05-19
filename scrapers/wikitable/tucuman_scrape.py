@@ -16,7 +16,7 @@ df = tables[4]
 
 # Rename columns
 df.columns = ['Date', 'Pollster', 'Sample', 'Frente de Todos', 'Juntos por el Cambio',
-             'Fuerza Republicana', 'Frente de Izquierda', 'Others',
+             'Fuerza Republicana', 'Frente de Izquierda', 'Frente Amplio por Tucumán', 'Others',
              'Blank', 'Undecided', 'Lead']
 
 # Filter out rows where Date is NaN

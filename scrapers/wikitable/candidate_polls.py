@@ -28,7 +28,7 @@ df = df[df['Date'].notna()]
 df = df[~df.astype(str).apply(lambda x: x.str.contains('anuncia|se lanza', case=False)).any(axis=1)]
 
 # Drop specified columns
-columns_to_drop = ['Fernández(FdeT)', 'Lousteau (JXC)', 'Macri (JXC)', 'Vidal (JXC)', ]
+columns_to_drop = ['Fernández(FdeT)', 'C. Kirchner (FdeT)', 'Lousteau (JXC)', 'Macri (JXC)', 'Vidal (JXC)', ]
 df = df.drop(columns_to_drop, axis=1)
 
 # Drop duplicate header row by index
