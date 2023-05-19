@@ -48,6 +48,10 @@ def display_chubut():
 def display_santacruz():
     return render_template('santacruz.html')
 
+@app.route('/provinces/santafe')
+def display_santafe():
+    return render_template('santafe.html')
+
 @app.route('/provinces/chaco')
 def display_chaco():
     return render_template('chaco.html')
