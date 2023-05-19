@@ -1,7 +1,9 @@
 from flask import Flask, render_template
+from flask_frozen import Freezer
 import pandas as pd
 
 app = Flask(__name__)
+freezer = Freezer(app)
 
 # Route for the home page
 @app.route('/')
@@ -9,11 +11,6 @@ def home():
     df = pd.read_csv('../wikitable/national_polls.csv')
     return render_template('home.html', data=df.to_html())
 
-# Route for displaying the Spanish voting intentions table
-@app.route('/spanish_voting_intentions')
-def display_spanish_voting_intentions():
-    df = pd.read_csv('scrapers/wikitable/spanish_voting_intentions.csv')
-    return render_template('table.html', data=df.to_html())
 
 # Route for the provincial elections page
 @app.route('/provinces')
@@ -79,12 +76,6 @@ def display_buenosaires():
 @app.route('/provinces/sanluis')
 def display_sanluis():
     return render_template('sanluis.html')
-
-
-
-
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)
