@@ -1,8 +1,6 @@
 import pandas as pd
 import requests
 import os
-import schedule
-import time
 
 # Define the scraping and updating function
 def scrape_and_update():
@@ -48,7 +46,7 @@ def scrape_and_update():
     # Update Datawrapper table using the Datawrapper API
     datawrapper_table_id = 'UkZzQ'
     api_key = os.environ['DATAWRAPPERAPI']
-    update_url = f'https://api.datawrapper.de/v3/charts/{datawrapper_table_id}/data'
+    update_url = f'https://api.datawrapper.de/v3/charts/UkZzQ/data'
 
     # Read the CSV file
     with open(csv_file, 'rb') as file:
@@ -70,10 +68,4 @@ def scrape_and_update():
         print(f'Error updating Datawrapper table. Status code: {response.status_code}')
         print(response.text)
 
-# Schedule the scraping and updating function to run twice a week
-schedule.every(3).days.do(scrape_and_update)  # Run every 3 days
-
-# Run the scheduled tasks indefinitely
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+scrape_and_update()
