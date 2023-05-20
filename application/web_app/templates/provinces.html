@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Argentine 329</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+      }
+      
+      .card {
+        background-color: rgb(80, 78, 78);
+        color: white;
+      }
+    </style>
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Argentine 329</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('provinces') }}">Provincial Elections</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container mt-3">
+      <div class="row justify-content-center">
+        <div class="col-sm-12 text-center">
+          <h1>Provincial elections are already underway across the country!</h1>
+          <p> Click on the map below to see your province's election date! Scroll down to the menu to see each province's individual election page where you can find polls and graphs from opinion polls in your province. If your province's election has already concluded, the page will present the election results. 
+            <br>
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="inline-flex shadow-sm" role="group">
+            <button type="button" class="border border-gray-200 bg-white py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-gold-3 focus:z-10 focus:text-gold-3 focus:ring-2 focus:ring-blue-700 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-blue-500">
+              <a href="#electiondates">Dates</a>
+            </button>
+            <button type="button" class="border-t border-b border-gray-200 bg-white py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-gold-3 focus:z-10 focus:text-gold-3 focus:ring-2 focus:ring-blue-700 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-blue-500">
+              <a href="#provincepages">Province Pages</a>
+            </button>
+          </div>
+        <br>
+        <div class="text-center"
+        <br>
+        <h2 id="electiondates"> Election dates across the country </h2>
+        <div class="container mt-3">
+          <div class="row justify-content-center">
+            <div class="col-sm-12 text-center">
+              <p>Last updated: May 15, 2023. The suspension of elections in Tucumán has been lifted by the Supreme Court, the province will hold its election in June. The electoral suspension in San Juan is still in effect. Any change will be shown here.
+              </p>
+            </div>
+            <br>
+            <div>
+              <body>
+                <div>
+                  <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/Ljl9K/embed.js?v=2" charset="utf-8"></script>
+                  <noscript><img src="https://datawrapper.dwcdn.net/Ljl9K/full.png" alt="" /></noscript>
+                </div>
+              </body>
+            </div> 
+            <br>
+            <br>
+            <br>
+            <div class="container mt-3">
+              <div class="row justify-content-center">
+                <div class="col-sm-12 text-center">
+                  <h1 id="provincepages"> Province Pages</h1>
+                  <p> Most provinces do not vote on the same say as the national election, keep up with who has already voted here. Buenos Aires City is indicated here as "CABA" (Ciudad Autónoma de Buenos Aires) as it is known in Spanish. 
+                  <p> Update May 15, 2023: Due to the Supreme Court suspending elections in San Juan, the province will not appear on this page until the suspension has been lifted.   
+                  </p>
+                </div>
+                <br>
+                <div class="row mt-3 justify-content-center">
+                  <div class="col-md-6 text-center">
+                    <h2>Provinces with upcoming elections:</h2>
+                    <div>
+                      <div class="inline-flex flex-column" role="group">
+                    <a href="/provinces/corrientes" class="btn btn-primary mb-2">Corrientes</a>
+                    <a href="/provinces/sanluis" class="btn btn-primary mb-2">San Luis</a>
+                    <a href="/provinces/tucuman" class="btn btn-primary mb-2">Tucumán</a>
+                    <a href="/provinces/cordoba" class="btn btn-primary mb-2">Córdoba</a>
+                    <a href="/provinces/formosa" class="btn btn-primary mb-2">Formosa</a>
+                    <a href="/provinces/chubut" class="btn btn-primary mb-2">Chubut</a>
+                    <a href="/provinces/santacruz" class="btn btn-primary mb-2">Santa Cruz</a>
+                    <a href="/provinces/santafe" class="btn btn-primary mb-2">Santa Fe</a>
+                    <a href="/provinces/chaco" class="btn btn-primary mb-2">Chaco</a>
+                    <a href="/provinces/mendoza" class="btn btn-primary mb-2">Mendoza</a>
+                    <a href="/provinces/caba" class="btn btn-primary mb-2">CABA</a>
+                    <a href="/provinces/catamarca" class="btn btn-primary mb-2">Catamarca</a>
+                    <a href="/provinces/entrerios" class="btn btn-primary mb-2">Entre Rios</a>
+                    <a href="/provinces/buenosaires" class="btn btn-primary mb-2">Province of Buenos Aires</a>
+                  </div>
+                </div>
+              </div>
+            <br>
+            <div class="text-center"
+            <br>
+        <h2 id="#completed"> Provinces where elections have concluded: </h2>
+        <div class="container mt-3">
+          <div class="row justify-content-center">
+            <div class="col-sm-12 text-center">
+              <p>As of May 18, 2023, eight provinces have already conducred their provincial elections. We will not be posting the results here, instead, please follow the links to the respective pages to see the full provincial election results. 
+              </p>
+            </div>
+            
+            <ul>
+              <li>Neuquén (April 16, 2023): <a href="https://www.jusneuquen.gov.ar/comicios-provinciales-16-de-abril-de-2023/">jusneuquen.gov.ar</a></li>
+              <li>Río Negro (April 16, 2023): <a href="https://rionegro.datosoficiales.com/#resultados/GOB/RN">rionegro.datosoficiales.com</a></li>
+              <li>Jujuy (May 7, 2023): <a href="https://www.electoraljujuy.gob.ar/Contenido/TEP/Estadisticas/20230705/EscrutinioDefinitivo.pdf">electoraljujuy.gob.ar</a></li>
+              <li>La Rioja (May 7, 2023):<a href="https://eleccioneslarioja2023.correoargentino.com.ar/index.php">eleccioneslarioja2023.correoargentino.com</a></li>
+              <li>Misiones (May 7, 2023): <a href="https://www.electoralmisiones.gov.ar/elecciones-generales-2023-7-de-mayo/">electoralmisiones.gov.ar</a></li>
+              <li>La Pampa (May 14, 2023): <a href="https://trielectorallapampa.gob.ar/index.php?option=com_content&view=article&id=1100&Itemid=165">trielectorallapampa.gob.ar</a></li>
+              <li>Salta (May 14, 2023): <a href="https://www.electoralsalta.gob.ar/">electoralsalta.gob.ar</a></li>
+              <li>Tierra del Fuego (May 14, 2023): <a href="https://juzgadoelectoraltdf.datosoficiales.com/#resultados/GOB/TDF">juzgadoelectoraltdf.datosoficiales.com</a></li>
+            </ul>
+            </html>
