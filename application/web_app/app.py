@@ -14,11 +14,9 @@ def home():
 def provinces():
     return render_template('provinces.html')
 
-
 @app.route('/provinces/corrientes2')
 def display_corrientes2():
     return render_template('corrientes2.html')
-
 
 @app.route('/provinces/cordoba')
 def display_cordoba():
@@ -52,6 +50,10 @@ def display_tucumanpolls():
 def display_mendoza():
     return render_template('mendoza.html')
 
+@app.route('/provinces/tucumanprovincepolls')
+def display_tucumanprovincepolls():
+    return render_template('tucumanprovincepolls.html')
+
 @app.route('/provinces/caba')
 def display_caba():
     return render_template('caba.html')
@@ -74,4 +76,3 @@ def display_sanluis():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
