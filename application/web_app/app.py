@@ -14,15 +14,11 @@ def home():
 def provinces():
     return render_template('provinces.html')
 
-# Route for the corrientes province page
-@app.route('/provinces/corrientes')
-def display_corrientes():
-    return render_template('corrientes.html')
 
-# Route for the Tucuman province page
-@app.route('/provinces/tucuman')
-def display_tucuman():
-    return render_template('tucuman.html')
+@app.route('/provinces/corrientes2')
+def display_corrientes2():
+    return render_template('corrientes2.html')
+
 
 @app.route('/provinces/cordoba')
 def display_cordoba():
@@ -36,17 +32,21 @@ def display_formosa():
 def display_chubut():
     return render_template('chubut.html')
 
-@app.route('/provinces/santacruz')
-def display_santacruz():
-    return render_template('santacruz.html')
+@app.route('/provinces/santafe2')
+def display_santafe2():
+    return render_template('santafe2.html')
 
-@app.route('/provinces/santafe')
-def display_santafe():
-    return render_template('santafe.html')
+@app.route('/provinces/santacruz2')
+def display_santacruz2():
+    return render_template('santacruz2.html')
 
 @app.route('/provinces/chaco')
 def display_chaco():
     return render_template('chaco.html')
+
+@app.route('/provinces/tucumanpolls')
+def display_tucumanpolls():
+    return render_template('tucumanpolls.html')
 
 @app.route('/provinces/mendoza')
 def display_mendoza():
