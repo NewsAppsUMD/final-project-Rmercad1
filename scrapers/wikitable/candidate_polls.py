@@ -1,6 +1,8 @@
 import pandas as pd
 import requests
 import os
+import schedule
+import time
 
 # Define the scraping and updating function
 def scrape_and_update():
@@ -68,4 +70,10 @@ def scrape_and_update():
         print(f'Error updating Datawrapper table. Status code: {response.status_code}')
         print(response.text)
 
-scrape_and_update()
+# Schedule the task to run twice a week
+schedule.every(3).days.do(scrape_and_update)  # Adjust the interval as needed
+
+# Run the scheduled tasks indefinitely
+while True:
+    schedule.run_pending()
+    time.sleep(1)
